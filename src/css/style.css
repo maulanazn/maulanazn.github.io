@@ -2,18 +2,24 @@ html body {
     font-family: 'FiraCode NFM', 'Cascadia Code', 'sans-serif';
 }
 
-#title {
+.top-title {
     text-align: center;
     font-style: normal;
     font-weight: bolder;
-}
-
-#sub-title {
-    text-align: center;
-    font-weight: bolder;
-    font-style: normal;
 }
 
 .line1 {
     background-color: black;
+}
+
+.link-social-media, a {
+    margin: 2vh;
+    text-align: center;
+    text-decoration: none;
+    color: #0f2341;
+}
+
+article section {
+    margin: 3vh;
+    text-align: center;
 }

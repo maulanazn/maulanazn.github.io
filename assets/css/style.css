@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+#about {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-family: 'Montserrat', sans-serif;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    margin: 30px;
+}
+
+#navbar a {
+    border-bottom-color: black;
+    color: black;
+}
+
+body {
+    margin-bottom: 3rem;
+}
+
+#navbar {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-family: 'Montserrat', sans-serif;
+    justify-content: center;
+    align-items: center;
+}
+
+#direction-read {
+    margin-top: 2rem;
+    margin-bottom: -2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-family: 'Montserrat', sans-serif;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+}
+
+#portofolio #img-entity {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-family: 'Montserrat', sans-serif;
+    justify-content: center;
+    align-items: center;
+    cursor: crosshair;
+    margin-top: 60px;
+}
+
+#portofolio #img-entity a img {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-family: 'Montserrat', sans-serif;
+    justify-content: center;
+    align-items: center;
+    cursor: crosshair;
+    margin-top: 60px;
+    border-style: groove;
+    border-color: black;
+    border-width: 10px;
+}
+
+#portofolio #img-entity p {
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    cursor: crosshair;
+    color: black;
+    border-bottom-color: black;
+}

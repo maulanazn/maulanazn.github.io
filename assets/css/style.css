@@ -1,75 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
-
-#about {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    font-family: 'Montserrat', sans-serif;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-    margin: 30px;
-}
-
-#navbar a {
-    border-bottom-color: black;
-    color: black;
-}
-
-body {
-    margin-bottom: 3rem;
+* {
+    font-family: sans-serif;
+    background: linear-gradient(90deg, #0bab64 0%, #3bb78f 100%);
+    color: #1F2937;
 }
 
 #navbar {
     display: flex;
-    flex-direction: row;
-    gap: 20px;
-    font-family: 'Montserrat', sans-serif;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: start;
 }
 
-#direction-read {
-    margin-top: 2rem;
-    margin-bottom: -2rem;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    font-family: 'Montserrat', sans-serif;
-    justify-content: center;
-    align-items: center;
-    font-style: italic;
+#navbar a {
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: larger;
 }
 
-#portofolio #img-entity {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    font-family: 'Montserrat', sans-serif;
-    justify-content: center;
-    align-items: center;
-    cursor: crosshair;
-    margin-top: 60px;
+#update-log #title {
+    font-size: 250%; 
+    font-weight: bold; 
+    text-align: center;
 }
 
-#portofolio #img-entity a img {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    font-family: 'Montserrat', sans-serif;
-    justify-content: center;
-    align-items: center;
-    cursor: crosshair;
-    margin-top: 60px;
-    border-style: groove;
-    border-color: black;
-    border-width: 10px;
+#update-log #date {
+    font-size: x-large; 
+    font-weight: 100;
 }
 
-#portofolio #img-entity p {
-    font-size: 2rem;
-    font-family: 'Montserrat', sans-serif;
-    cursor: crosshair;
-    color: black;
-    border-bottom-color: black;
+#update-log #content {
+    font-size: x-large;
 }

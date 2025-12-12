@@ -3,24 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shrinks In With The Rabbit Hole</title>
+    <title>MaulanaZN Official Website</title>
     <link href="assets/css/style.css" rel="stylesheet"/>
 </head>
 <body>
     <nav id="navbar">
-        <a>Update Log</a>
+        <a href="#privacy-policy">Privacy And Policy of SayaHadir</a>
     </nav>
     <hr/>
-    <section id="update-log">
-       <h1 id="title">Aplikasi Absensi</h1>
-       <h1 id="date">8 Oktober 2025</h1>
-       <ul id="content">
-        <li>List data pada fitur 'Daftar Kehadiran', kini untuk role karyawan ada 7 data terakhir</li>
-        <img src="assets/images/screen-20251009-095803-ezgif.com-optimize.gif" class="image-1" loading="lazy" draggable="false" alt="Screen"/>
-        <li>Menampilkan data absensi dengan jelas dan terbuka, bisa dilihat antara jika sudah ataupun belum absen</li>
-        <li>Menambah input baru untuk menambahkan data str, sip, ijazah dan surat kontrak karyawan</li>
-        <img src="assets/images/1759980407003.png" width="300" class="image-2" loading="lazy"/>
-       </ul>
+    <section id="privacy-policy">
+        <pre style="font-size: 1.1rem;">
+        Terakhir diperbarui: 11 Desember 2025
+
+        Kebijakan Privasi ini menjelaskan bagaimana aplikasi ("SayaHadir") mengumpulkan, menggunakan, memproses, 
+        dan menyimpan data pribadi pengguna. Dengan menggunakan Aplikasi, anda menyetujui praktik yang dijelaskan dalam dokumen ini.
+
+        ---
+
+        1. Data yang Kami Kumpulkan dan Dibaca
+
+        Aplikasi dapat mengumpulkan dan membaca data berikut berdasarkan pola kerja aplikasi, seperti berikut:
+
+        - Halaman ("Home") membaca data seperti username, company, attendance at, in time, out time, photo in, photo out
+        - Halaman ("Attend") mengumpulkan data dengan detail seperti berikut:
+            * area
+            * admin id
+            * id employee, yaitu id karyawan / nomor karyawan
+            * username
+            * company
+            * location in, berbentuk string dari gabungan latitude dan longitude yang diambil dari frontend (bukan backend)
+            * location out, berbentuk string dari gabungan latitude dan longitude yang diambil dari frontend (bukan backend)
+            * photo in, berbentuk string dari pemrosesan binary captured photo ke Object Storage Cloud (return string url)
+            * photo out, berbentuk string dari pemrosesan binary captured photo ke Object Storage Cloud (return string url)
+            * in time, format waktu 'HH:mm:ss'
+            * out time, format waktu 'HH:mm:ss'
+            * notes
+            * status, antara PROCESSED atau NOT_PROCESSED
+        - Halaman ("Feed") membaca data dengan detail seperti berikut:
+            * photo, yaitu foto profil (bagian halaman Profile yang akan disebut nanti)
+            * fullname, (bagian dari halaman Profile)
+            * description
+            * notesAt, waktu data feed terbuat (Unix Epoch Format)
+        - Halaman ("List Attendance") membaca data dengan detail seperti berikut:
+            * username
+            * company
+            * attendance at
+            * in time
+            * out time
+            * location in, bentuk url ke google maps dengan memisahkan latitude dan longitude dari koma (',') dan diakses berdasarkan index array
+            * location out, bentuk url ke google maps dengan memisahkan latitude dan longitude dari koma (',') dan diakses berdasarkan index array
+            * photo in
+            * photo out
+
+        Semua data dikumpulkan dan dibaca hanya jika diperlukan untuk menjalankan fungsi Aplikasi.
+
+        ---
+
+        2. Cara Kami Menggunakan Data
+
+        Data yang dikumpulkan digunakan untuk:
+
+        - Menyediakan fungsi utama Aplikasi (misalnya login, absensi, atau pengelolaan profil).
+        - Pemrosesan pada server kami untuk memastikan layanan bekerja dengan baik.
+        - Menyimpan file pada infrastruktur penyimpanan cloud pihak ketiga.
+        - Meningkatkan stabilitas dan keamanan Aplikasi.
+
+        Kami tidak menjual, menyewakan, atau membagikan data pengguna kepada pihak ketiga, lebih-lebih kepada pihak tidak dikenal untuk tujuan komersial.
+
+        ---
+
+        3. Pemrosesan dan Penyimpanan Data
+
+        Aplikasi memproses dan menyimpan data melalui:
+
+        - Server milik kami yang di-hosting pada infrastruktur cloud pihak ketiga.
+        - Object storage cloud pihak ketiga, untuk penyimpanan file seperti foto dan dokumen.
+
+        Semua transfer data dilakukan melalui koneksi terenkripsi (HTTPS/TLS).
+
+        ---
+
+        4. Berbagi Data kepada Pihak Ketiga
+
+        Kami hanya membagikan data kepada pihak berikut:
+
+        - Penyedia server cloud tempat aplikasi kami berjalan.
+        - Penyedia penyimpanan cloud (object storage) untuk file.
+
+        Pihak ketiga ini hanya memproses data sesuai instruksi kami dan mengikuti standar keamanan industri.
+
+        Kami tidak membagikan data pengguna untuk iklan atau tujuan pihak ketiga lainnya.
+
+        ---
+
+        5. Keamanan Data
+
+        Kami menerapkan langkah-langkah untuk melindungi data pengguna, termasuk:
+
+        - Enkripsi saat transit (HTTPS/TLS).
+        - Pembatasan akses ke data.
+        - Sistem pemantauan dan logging pada server.
+
+        Meski demikian, tidak ada sistem keamanan yang 100% bebas risiko.
+
+        ---
+
+        6. Hak Pengguna
+
+        Pengguna memiliki hak untuk:
+
+        - Mengakses data pribadi mereka.
+        - Memperbarui atau mengoreksi data.
+        - Meminta penghapusan data.
+        - Menarik kembali persetujuan terkait pemrosesan data tertentu.
+
+        Permintaan dapat diajukan melalui kontak yang tersedia pada section nomor 9
+
+        ---
+
+        7. Retensi Data
+
+        Kami menyimpan data selama masih diperlukan untuk menjalankan fungsi Aplikasi. Jika pengguna berhenti menggunakan Aplikasi atau meminta penghapusan, data akan dihapus sesuai standar operasional kami.
+
+        ---
+
+        8. Perubahan Kebijakan
+
+        Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu. Perubahan akan diumumkan melalui Aplikasi atau halaman resmi kami.
+
+        ---
+
+        9. Kontak
+
+        Jika Anda memiliki pertanyaan terkait kebijakan privasi ini, silakan hubungi:
+
+        - Email: [maulinuxzn@gmail.com](mailto:maulinuxzn@gmail.com)
+
+        ---
+
+        Dokumen ini dibuat untuk memenuhi persyaratan Google Play, termasuk Data Safety dan transparansi pengolahan data pengguna.
+        </pre>
     </section>
     <script src="assets/js/index.js"></script>
 </body>

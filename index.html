@@ -13,7 +13,7 @@
     <hr/>
     <section id="privacy-policy">
         <pre style="font-size: 1.1rem;">
-        Terakhir diperbarui: 11 Desember 2025
+        Terakhir diperbarui: 12 Desember 2025
 
         Kebijakan Privasi ini menjelaskan bagaimana aplikasi ("SayaHadir") mengumpulkan, menggunakan, memproses, 
         dan menyimpan data pribadi pengguna. Dengan menggunakan Aplikasi, anda menyetujui praktik yang dijelaskan dalam dokumen ini.
@@ -54,8 +54,68 @@
             * location out, bentuk url ke google maps dengan memisahkan latitude dan longitude dari koma (',') dan diakses berdasarkan index array
             * photo in
             * photo out
-
-        Semua data dikumpulkan dan dibaca hanya jika diperlukan untuk menjalankan fungsi Aplikasi.
+        - Halaman ("Koreksi Kehadiran") dengan detail seperti berikut:
+            * Baca data
+                # membaca kolom username, company, photo in, notes, attendance at, in time, out time, location in, location out
+            * Simpan data
+                # mengumpulkan area, admin id, id employee, username, company, location in, location out, photo in, photo out, attendance at, in time, out time, notes, status
+        - Halaman ("New Shift /  Shift Baru") adalah fitur yang diperuntukkan kepada satpam ataupun petugas keamanan yang punya shift di atas jam kerja, dan detail seperti berikut:
+            * Baca data
+                # membaca kolom username, company, photo in, notes, attendance at, in time, location in
+            * Simpan data
+                # mengumpulkan area, admin id, id employee, username, company, location in, photo in, attendance at, in time, notes, status
+        - Halaman ("Cuti / Leave") dengan detail seperti berikut:
+            * Baca data
+                # membaca kolom username, attachment (foto / dokument), remark, time start (unix epoch), time end (unix epoch)
+            * Simpan data
+                # mengumpulkan area, admin id, id employee, username, company, type (0 = cuti), time start, time end, remark, attachment
+            * Edit data
+                # mengubah kolom time start, time end, remark, dan attachment, juga type (tidak bisa dirubah, sudah diatur per activity, 0 = cuti)
+        - Halaman ("Lembur / Overtime") dengan detail seperti berikut:
+            * Baca data
+                # membaca kolom username, attachment (foto / dokument), remark, time start (unix epoch), time end (unix epoch)
+            * Simpan data
+                # mengumpulkan area, admin id, id employee, username, company, type (1 = lembur), time start, time end, remark, attachment
+            * Edit data
+                # mengubah kolom time start, time end, remark, dan attachment, juga type (tidak bisa dirubah, sudah diatur per activity, 1 = lembur)
+        - Halaman ("Perjalanan Bisnis / Business Trip") dengan detail seperti berikut:
+            * Baca data
+                # membaca kolom username, attachment (foto / dokument), remark, time start (unix epoch), time end (unix epoch)
+            * Simpan data
+                # mengumpulkan area, admin id, id employee, username, company, type (2 = perjalanan bisnis), time start, time end, remark, attachment
+            * Edit data
+                # mengubah kolom time start, time end, remark, dan attachment, juga type (tidak bisa dirubah, sudah diatur per activity, 2 = perjalanan bisnis)
+        - Halaman ("Daily Activity") dengan detail seperti berikut:
+            * Baca data
+                # membaca kolom username, photo (foto / dokument), task, time start (unix epoch), time end (unix epoch), latitude dan longitude (dalam bentuk google maps url seperti yang ada di fitur "List Attendance"), type (Jenis Kegiatan)
+            * Simpan data
+                # mengumpulkan area, admin id, id employee, username, company, task, time start, time end, latitude, longitude, type, photo, other
+            * Edit data
+                # mengubah kolom task, time start, time end, latitude, longitude, type, photo, other
+        - Halaman ("Manual Entry") dengan detail seperti berikut:
+            * Baca data
+                # membaca kolom username, time start, time end, remark
+            * Simpan data
+                # mengumpulkan area, admin id, id employee, username, company, type (default = 0), time start, time end, remark
+            * Edit data
+                # mengubah kolom area, admin id, id employee, username, company, type (default = 0), time start, time end, remark
+        - Halaman ("Profile") dengan detail seperti berikut:
+            * Baca data
+                # membaca kolom fullname, birth place, birth date, religion, marital status, gender, nationality, address, postal code, photo, dan 'secret identity' yang sudah didekripsi seperti str (nomor, gambar), sip (nomor, gambar), certificate (gambar), employment contract letter (gambar)
+            * Edit data
+                # mengubah kolom fullname, birth place, birth date, religion, marital status, gender, nationality, address, postal code, photo, dan 'secret identity' yang dienkripsi seperti str (nomor, gambar), sip (nomor, gambar), certificate (gambar), employment contract letter (gambar)
+        - Halaman ("Login") dengan detail seperti berikut:
+            * Baca data
+                # membaca input username dan password, password yang ter-hash, juga mengembalikan token yang ter-encode dengan menyimpan informasi seperti username, role, nama, servletRequest.getServerName() dan area, masing-masing dipisah dengan spasi sehingga bisa di-split berdasarkan spasi untuk diambil informasinya tergantung kebutuhan aplikasi, seperti pengambilan data input username dan token ke table user sqlite untuk fungsional fitur offline
+        - Halaman ("Synchronize") dengan detail seperti berikut:
+            * Baca data
+                # membaca semua data dari fitur Attendance, Correct Attendance, New Shift, Leave, Overtime, Business Trip, Daily Activity
+            * Sinkronisasi data ke server
+                # Melakukan pengiriman data dari fitur-fitur yang disebut di atas, dengan mengirim data-data / kolom-kolom sesuai pada bagian 'Simpan data' yang disebut pada setiap Halaman di atas
+            * Hapus data
+                # Melakukan penghapusan data dari row table pada database lokal sqlite yang dimiliki masing-masing device ketika memasang aplikasi, juga menghapus gambar yang terkait dari penyimpanan / database lokal tersebut
+        
+        Semua data dikumpulkan dan dibaca hanya jika diperlukan untuk menjalankan fungsi Aplikasi, termasuk 'secret identity' pada halaman profil maupun table profiles yang terdiri dari str, sip, certificate dan employment contract letter yang dienkripsi dan didekripsi secara mandiri di backend / VPS.
 
         ---
 

@@ -123,12 +123,16 @@
 
         Data yang dikumpulkan digunakan untuk:
 
-        - Menyediakan fungsi utama Aplikasi (misalnya login, absensi, atau pengelolaan profil).
-        - Pemrosesan pada server kami untuk memastikan layanan bekerja dengan baik.
-        - Menyimpan file pada infrastruktur penyimpanan cloud pihak ketiga.
-        - Meningkatkan stabilitas dan keamanan Aplikasi.
+        - Pemrosesan data untuk laporan internal perusahaan, seperti untuk:
+            * Data rekam absen, cuti, lembur, perjalanan bisnis, daily activity, juga
+            * data lokasi untuk validasi kehadiran karyawan (secara manual dari HR, karena untuk menjaga integritas lokasi maupun data user)
+            * Deteksi jam presensi, apakah telat, tepat waktu atau bahkan 'early person' sebagai bahan pertimbangan dari internal perusahaan seperti untuk penggajian ataupun regulasi lainnya
+        - Terkait token, yang terdapat data 'role' di dalamnya, termasuk juga sebagai cara kami menggunakan data, seperti berikut:
+            * Pemisahan akses data berdasarkan role
+            * Hanya role HRD yang dapat akses ke semua user yang mempunyai id 'admin id', company id ataupun division yang sama / terkait
+            * Role Manager dapat melihat data user sesuai dengan data division yang sama
 
-        Kami tidak menjual, menyewakan, atau membagikan data pengguna kepada pihak ketiga, lebih-lebih kepada pihak tidak dikenal untuk tujuan komersial.
+        Kami tidak menjual, menyewakan, atau membagikan data pengguna kepada pihak ketiga, lebih-lebih kepada pihak tidak dikenal untuk tujuan komersial ataupun lebih buruk, untuk tindakan kriminal.
 
         ---
 
@@ -160,11 +164,10 @@
 
         Kami menerapkan langkah-langkah untuk melindungi data pengguna, termasuk:
 
-        - Enkripsi saat transit (HTTPS/TLS).
-        - Pembatasan akses ke data.
-        - Sistem pemantauan dan logging pada server.
-
-        Meski demikian, tidak ada sistem keamanan yang 100% bebas risiko.
+        - Enkripsi saat transit (HTTPS/TLS)
+        - Enkripsi data pada 'secret identity'
+        - Pembatasan akses ke data
+        - Sistem pemantauan dan logging pada server
 
         ---
 
@@ -183,13 +186,13 @@
 
         7. Retensi Data
 
-        Kami menyimpan data selama masih diperlukan untuk menjalankan fungsi Aplikasi. Jika pengguna berhenti menggunakan Aplikasi atau meminta penghapusan, data akan dihapus sesuai standar operasional kami.
+        Kami menyimpan data selama masih diperlukan untuk menjalankan fungsi Aplikasi. Jika pengguna berhenti menggunakan Aplikasi atau meminta penghapusan, data akan dihapus sesuai dengan regulasi kami.
 
         ---
 
         8. Perubahan Kebijakan
 
-        Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu. Perubahan akan diumumkan melalui Aplikasi atau halaman resmi kami.
+        Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu. Perubahan akan diumumkan melalui halaman resmi ini.
 
         ---
 

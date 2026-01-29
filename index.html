@@ -13,198 +13,134 @@
     <hr/>
     <section id="privacy-policy">
         <pre style="font-size: 1.1rem;">
-        Terakhir diperbarui: 12 Desember 2025
+            Privacy Policy
 
-        Kebijakan Privasi ini menjelaskan bagaimana aplikasi ("SayaHadir") mengumpulkan, menggunakan, memproses, 
-        dan menyimpan data pribadi pengguna. Dengan menggunakan Aplikasi, anda menyetujui praktik yang dijelaskan dalam dokumen ini.
+            Last updated: 29 January 2026
 
-        ---
+            SayaHadir is a mobile application that operates using a WebView, displaying and providing services from https://sayahadir.my.id/#/. We respect user privacy and are committed to protecting personal data in accordance with applicable laws and Google Play policies.
 
-        1. Data yang Kami Kumpulkan dan Dibaca
+            1. Information We Collect
 
-        Aplikasi dapat mengumpulkan dan membaca data berikut berdasarkan pola kerja aplikasi, seperti berikut:
+            We collect only the data that is necessary to provide the core functionality of the application.
 
-        - Halaman ("Home") membaca data seperti username, company, attendance at, in time, out time, photo in, photo out
-        - Halaman ("Attend") mengumpulkan data dengan detail seperti berikut:
-            * area
-            * admin id
-            * id employee, yaitu id karyawan / nomor karyawan
-            * username
-            * company
-            * location in, berbentuk string dari gabungan latitude dan longitude yang diambil dari frontend (bukan backend)
-            * location out, berbentuk string dari gabungan latitude dan longitude yang diambil dari frontend (bukan backend)
-            * photo in, berbentuk string dari pemrosesan binary captured photo ke Object Storage Cloud (return string url)
-            * photo out, berbentuk string dari pemrosesan binary captured photo ke Object Storage Cloud (return string url)
-            * in time, format waktu 'HH:mm:ss'
-            * out time, format waktu 'HH:mm:ss'
-            * notes
-            * status, antara PROCESSED atau NOT_PROCESSED
-        - Halaman ("Feed") membaca data dengan detail seperti berikut:
-            * photo, yaitu foto profil (bagian halaman Profile yang akan disebut nanti)
-            * fullname, (bagian dari halaman Profile)
-            * description
-            * notesAt, waktu data feed terbuat (Unix Epoch Format)
-        - Halaman ("List Attendance") membaca data dengan detail seperti berikut:
-            * username
-            * company
-            * attendance at
-            * in time
-            * out time
-            * location in, bentuk url ke google maps dengan memisahkan latitude dan longitude dari koma (',') dan diakses berdasarkan index array
-            * location out, bentuk url ke google maps dengan memisahkan latitude dan longitude dari koma (',') dan diakses berdasarkan index array
-            * photo in
-            * photo out
-        - Halaman ("Koreksi Kehadiran") dengan detail seperti berikut:
-            * Baca data
-                # membaca kolom username, company, photo in, notes, attendance at, in time, out time, location in, location out
-            * Simpan data
-                # mengumpulkan area, admin id, id employee, username, company, location in, location out, photo in, photo out, attendance at, in time, out time, notes, status
-        - Halaman ("New Shift /  Shift Baru") adalah fitur yang diperuntukkan kepada satpam ataupun petugas keamanan yang punya shift di atas jam kerja, dan detail seperti berikut:
-            * Baca data
-                # membaca kolom username, company, photo in, notes, attendance at, in time, location in
-            * Simpan data
-                # mengumpulkan area, admin id, id employee, username, company, location in, photo in, attendance at, in time, notes, status
-        - Halaman ("Cuti / Leave") dengan detail seperti berikut:
-            * Baca data
-                # membaca kolom username, attachment (foto / dokument), remark, time start (unix epoch), time end (unix epoch)
-            * Simpan data
-                # mengumpulkan area, admin id, id employee, username, company, type (0 = cuti), time start, time end, remark, attachment
-            * Edit data
-                # mengubah kolom time start, time end, remark, dan attachment, juga type (tidak bisa dirubah, sudah diatur per activity, 0 = cuti)
-        - Halaman ("Lembur / Overtime") dengan detail seperti berikut:
-            * Baca data
-                # membaca kolom username, attachment (foto / dokument), remark, time start (unix epoch), time end (unix epoch)
-            * Simpan data
-                # mengumpulkan area, admin id, id employee, username, company, type (1 = lembur), time start, time end, remark, attachment
-            * Edit data
-                # mengubah kolom time start, time end, remark, dan attachment, juga type (tidak bisa dirubah, sudah diatur per activity, 1 = lembur)
-        - Halaman ("Perjalanan Bisnis / Business Trip") dengan detail seperti berikut:
-            * Baca data
-                # membaca kolom username, attachment (foto / dokument), remark, time start (unix epoch), time end (unix epoch)
-            * Simpan data
-                # mengumpulkan area, admin id, id employee, username, company, type (2 = perjalanan bisnis), time start, time end, remark, attachment
-            * Edit data
-                # mengubah kolom time start, time end, remark, dan attachment, juga type (tidak bisa dirubah, sudah diatur per activity, 2 = perjalanan bisnis)
-        - Halaman ("Daily Activity") dengan detail seperti berikut:
-            * Baca data
-                # membaca kolom username, photo (foto / dokument), task, time start (unix epoch), time end (unix epoch), latitude dan longitude (dalam bentuk google maps url seperti yang ada di fitur "List Attendance"), type (Jenis Kegiatan)
-            * Simpan data
-                # mengumpulkan area, admin id, id employee, username, company, task, time start, time end, latitude, longitude, type, photo, other
-            * Edit data
-                # mengubah kolom task, time start, time end, latitude, longitude, type, photo, other
-        - Halaman ("Manual Entry") dengan detail seperti berikut:
-            * Baca data
-                # membaca kolom username, time start, time end, remark
-            * Simpan data
-                # mengumpulkan area, admin id, id employee, username, company, type (default = 0), time start, time end, remark
-            * Edit data
-                # mengubah kolom area, admin id, id employee, username, company, type (default = 0), time start, time end, remark
-        - Halaman ("Profile") dengan detail seperti berikut:
-            * Baca data
-                # membaca kolom fullname, birth place, birth date, religion, marital status, gender, nationality, address, postal code, photo, dan 'secret identity' yang sudah didekripsi seperti str (nomor, gambar), sip (nomor, gambar), certificate (gambar), employment contract letter (gambar)
-            * Edit data
-                # mengubah kolom fullname, birth place, birth date, religion, marital status, gender, nationality, address, postal code, photo, dan 'secret identity' yang dienkripsi seperti str (nomor, gambar), sip (nomor, gambar), certificate (gambar), employment contract letter (gambar)
-        - Halaman ("Login") dengan detail seperti berikut:
-            * Baca data
-                # membaca input username dan password, password yang ter-hash, juga mengembalikan token yang ter-encode dengan menyimpan informasi seperti username, role, nama, servletRequest.getServerName() dan area, masing-masing dipisah dengan spasi sehingga bisa di-split berdasarkan spasi untuk diambil informasinya tergantung kebutuhan aplikasi, seperti pengambilan data input username dan token ke table user sqlite untuk fungsional fitur offline
-        - Halaman ("Synchronize") dengan detail seperti berikut:
-            * Baca data
-                # membaca semua data dari fitur Attendance, Correct Attendance, New Shift, Leave, Overtime, Business Trip, Daily Activity
-            * Sinkronisasi data ke server
-                # Melakukan pengiriman data dari fitur-fitur yang disebut di atas, dengan mengirim data-data / kolom-kolom sesuai pada bagian 'Simpan data' yang disebut pada setiap Halaman di atas
-            * Hapus data
-                # Melakukan penghapusan data dari row table pada database lokal sqlite yang dimiliki masing-masing device ketika memasang aplikasi, juga menghapus gambar yang terkait dari penyimpanan / database lokal tersebut
-        
-        Semua data dikumpulkan dan dibaca hanya jika diperlukan untuk menjalankan fungsi Aplikasi, termasuk 'secret identity' pada halaman profil maupun table profiles yang terdiri dari str, sip, certificate dan employment contract letter yang dienkripsi dan didekripsi secara mandiri di backend / VPS.
+            a. Account / Login Information
 
-        ---
+            - Username and password are provided during login
+            - Used solely for authentication, account management and application usage purposes
 
-        2. Cara Kami Menggunakan Data
+            b. Location Data
 
-        Data yang dikumpulkan digunakan untuk:
+            - Approximate or precise device location (FINE / COARSE)
+            - Used only for location-based features within the application are covering such features as:
+                * Attend
+                * Koreksi Kehadiran
+                * New Shift / Shift Baru
+                * Daily Activity
+                * Synchronize
+            - Location data is not used for background tracking or advertising purposes
 
-        - Pemrosesan data untuk laporan internal perusahaan, seperti untuk:
-            * Data rekam absen, cuti, lembur, perjalanan bisnis, daily activity, juga
-            * data lokasi untuk validasi kehadiran karyawan (secara manual dari HR, karena untuk menjaga integritas lokasi maupun data user)
-            * Deteksi jam presensi, apakah telat, tepat waktu atau bahkan 'early person' sebagai bahan pertimbangan dari internal perusahaan seperti untuk penggajian ataupun regulasi lainnya
-        - Terkait token, yang terdapat data 'role' di dalamnya, termasuk juga sebagai cara kami menggunakan data, seperti berikut:
-            * Pemisahan akses data berdasarkan role
-            * Hanya role HRD yang dapat akses ke semua user yang mempunyai id 'admin id', company id ataupun division yang sama / terkait
-            * Role Manager dapat melihat data user sesuai dengan data division yang sama
+            c. Camera Access
 
-        Kami tidak menjual, menyewakan, atau membagikan data pengguna kepada pihak ketiga, lebih-lebih kepada pihak tidak dikenal untuk tujuan komersial ataupun lebih buruk, untuk tindakan kriminal.
+            - Used only when users choose to take photos or capture images within the app in such features as:
+                * Attend
+                * Koreksi Kehadiran
+                * New Shift / Shift Baru
+                * Cuti / Leave
+                * Lembur / Overtime
+                * Perjalanan Bisnis / Business Trip
+                * Daily Activity
+                * Profile
+            - Camera access is activated only through user interaction
 
-        ---
+            d. Media & Storage Access
 
-        3. Pemrosesan dan Penyimpanan Data
+            - Access to device media or storage is used only for file or image uploads in such features as:
+                * Attend (Offline)
+                * Koreksi Kehadiran (Upload file / Offline capture)
+                * New Shift / Shift Baru (Upload file / Offline capture)
+                * Cuti / Leave (Upload file)
+                * Lembur / Overtime (Upload file)
+                * Perjalanan Bisnis / Business Trip (Upload file)
+                * Daily Activity (Upload file / Offline capture)
+                * Profile (Upload file)
+            - The application does not access files without explicit user action
 
-        Aplikasi memproses dan menyimpan data melalui:
+            e. Technical Information
 
-        - Server milik kami yang di-hosting pada infrastruktur cloud pihak ketiga.
-        - Object storage cloud pihak ketiga, untuk penyimpanan file seperti foto dan dokumen.
+            - technical diagnostics and logs
+            - Used for application stability, performance, and security
 
-        Semua transfer data dilakukan melalui koneksi terenkripsi (HTTPS/TLS).
+            2. How We Use Information
 
-        ---
+            We use collected information to:
+            - Provide and operate application features
+            - Authenticate users and manage accounts
+            - Support location-based functionality
+            - Enable file and media uploads
+            - Maintain application security and prevent misuse
+            - We do not sell, rent, or trade user personal data to third parties.
 
-        4. Berbagi Data kepada Pihak Ketiga
+            3. WebView and JavaScript Bridge
 
-        Kami hanya membagikan data kepada pihak berikut:
+            - This application uses a WebView with a JavaScript Bridge to enable communication between the Android application and the web content. 
+              We use some JavaScript Bridges such as:
+                * requestLocation
+                    Used for fetching the current location latitude and longitude, 
+                    and to separate of how between platform (web and android) are requesting location, 
+                    for example the web is using navigator interface, meanwhile the android is using the fusedClient
+                * onLogout
+                    Used for post logging out action such as clearing the cache, history, form data, removed all cookies and reload 
+            - The bridge is used strictly for required application functionality
+            - It does not access data beyond user consent
+            - All interactions occur within the application context
 
-        - Penyedia server cloud tempat aplikasi kami berjalan.
-        - Penyedia penyimpanan cloud (object storage) untuk file.
+            4. File Uploads
 
-        Pihak ketiga ini hanya memproses data sesuai instruksi kami dan mengikuti standar keamanan industri.
+            When users upload files:
+            - Files are transmitted securely through the application server to the S3 object storage server
+            - Files are used only for the purpose requested by the user
+            - Uploaded files are not shared with third parties without user consent
 
-        Kami tidak membagikan data pengguna untuk iklan atau tujuan pihak ketiga lainnya.
+            5. Data Security
 
-        ---
+            We implement reasonable technical and organizational measures to protect user data from:
+            - Unauthorized access
+            - Alteration
+            - Disclosure
+            - Destruction
+            We also applied steps to secured user data, such as:
+            - Encrypting while transit (HTTPS/TLS)
+            - Encrypting data at the sensitive information such as STR, SIP, Certificate and Employment Contract Letter
+            - Restrictions access to related data by categorized user based on role
+            - Monitoring system and logging at the server (mostly SQL and warning error)
 
-        5. Keamanan Data
+            6. Data Retention and Deletion
 
-        Kami menerapkan langkah-langkah untuk melindungi data pengguna, termasuk:
+            - Data is retained only as long as necessary to fulfill its purpose
+            - Users may request account or data deletion
+            - Requests are processed in accordance with applicable legal requirements
 
-        - Enkripsi saat transit (HTTPS/TLS)
-        - Enkripsi data pada 'secret identity'
-        - Pembatasan akses ke data
-        - Sistem pemantauan dan logging pada server
+            7. User Rights
 
-        ---
+            Users have the right to:
+            - Access their personal data
+            - Request correction or deletion
+            - Withdraw consent for specific data usage
+            Requests can be submitted through the contact information below by mentioned the username.
 
-        6. Hak Pengguna
+            8. Children’s Privacy
 
-        Pengguna memiliki hak untuk:
+            This application is not intended for children under the age of 13. We do not knowingly collect personal data from children.
 
-        - Mengakses data pribadi mereka.
-        - Memperbarui atau mengoreksi data.
-        - Meminta penghapusan data.
-        - Menarik kembali persetujuan terkait pemrosesan data tertentu.
+            9. Changes to This Privacy Policy
 
-        Permintaan dapat diajukan melalui kontak yang tersedia pada section nomor 9
+            This Privacy Policy may be updated periodically. Any changes will be posted on this page and will take effect immediately upon publication.
 
-        ---
+            10. Contact Us
 
-        7. Retensi Data
+            If you have any questions regarding this Privacy Policy, please contact us:
 
-        Kami menyimpan data selama masih diperlukan untuk menjalankan fungsi Aplikasi. Jika pengguna berhenti menggunakan Aplikasi atau meminta penghapusan, data akan dihapus sesuai dengan regulasi kami.
-
-        ---
-
-        8. Perubahan Kebijakan
-
-        Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu. Perubahan akan diumumkan melalui halaman resmi ini.
-
-        ---
-
-        9. Kontak
-
-        Jika Anda memiliki pertanyaan terkait kebijakan privasi ini, silakan hubungi:
-
-        - Email: [maulinuxzn@gmail.com](mailto:maulinuxzn@gmail.com)
-
-        ---
-
-        Dokumen ini dibuat untuk memenuhi persyaratan Google Play, termasuk Data Safety dan transparansi pengolahan data pengguna.
+            Email: [t1wxgh0v4@mozmail.com]
         </pre>
     </section>
     <script src="assets/js/index.js"></script>
